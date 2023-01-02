@@ -7,23 +7,23 @@ import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
-
+import Header from '../components/header'
 type Props = {
   allPosts: Post[]
 }
 
 export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const workPosts = allPosts.filter(post => post.type === 'work')
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Eric Rawn Portfolio</title>
         </Head>
+        <Header/>
         <Container>
           <Intro />
-          {heroPost && (
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -32,8 +32,8 @@ export default function Index({ allPosts }: Props) {
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          )} */}
+          {workPosts.length > 0 && <MoreStories posts={workPosts} />}
         </Container>
       </Layout>
     </>
@@ -48,6 +48,7 @@ export const getStaticProps = async () => {
     'author',
     'coverImage',
     'excerpt',
+    'type',
   ])
 
   return {

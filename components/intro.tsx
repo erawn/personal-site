@@ -1,21 +1,31 @@
-import { CMS_NAME } from '../lib/constants'
-
+import Image from "next/image"
 const Intro = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
-      </h1>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{' '}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
-        >
-          Next.js
-        </a>{' '}
-        and {CMS_NAME}.
-      </h4>
+    <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-between md:gap-y-8 mt-4 mb-16 md:mb-12">
+      <Image
+      src={'/assets/inkdrop.jpg'}
+      alt={`Cover Image for cover image`}
+      width={1300}
+      height={630}
+    />
+      <section className="items-left md:justify-between pl-8 mt-4">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:pl-8">
+            Hi! I'm Eric.
+          </h1>
+          <h4 className="text-left md:text-left text-lg mt-5 md:pl-8">
+          I’m an HCI researcher, digital/installation artist, sound+lights+projection technician, and maker. 
+          Computer Science PhD Student at UC Berkeley studying Human-Computer Interaction. 
+          Thinking about aesthetics, technology, making (good on) our values. 
+          Previously at Stanford and  <a
+              href="https://www.shapertools.com"
+              className="underline hover:text-blue-600 duration-200 transition-colors"
+            >
+              Shaper
+            </a>. 
+          Currently interested in version control, creative programming, and the intellectual history of HCI. 
+          The best way to contact me is emailing : erawn~at~berkeley~dot~edu
+          </h4>
+      </section>
     </section>
   )
 }
