@@ -1,8 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  purge: false,
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h5, h6': {
+              color: theme('colors.emerald.700'),
+              fontWeight: 'bold',
+              fontFamily: theme('fontFamily.serif').join(", ")
+            },
+          },
+        },
+      }),
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
@@ -31,5 +43,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

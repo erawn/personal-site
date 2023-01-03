@@ -11,18 +11,37 @@ import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
-
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import markdownStyles from '../../components/markdown-styles.module.css'
 type Props = {
   post: PostType
   morePosts: PostType[]
   preview?: boolean
 }
 
+
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  const markdown = `#### intro
+  
+  A paragraph with *emphasis* and **strong importance**. 
+
+> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+
+* Lists
+* [ ] todo
+* [x] done
+
+A table:
+
+| a | b |
+| - | - |
+`
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -31,10 +50,10 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 prose">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
@@ -43,8 +62,13 @@ export default function Post({ post, morePosts, preview }: Props) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                prettyDate={post.prettyDate}
               />
-              <PostBody content={post.content} />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                className={markdownStyles['markdown']}
+                children={post.content}
+              />
             </article>
           </>
         )}
@@ -70,8 +94,9 @@ export async function getStaticProps({ params }: Params) {
     'coverImage',
     'secondImage',
     'type',
+    'prettyDate'
   ])
-  const content = await markdownToHtml(post.content || '')
+  const content = post.content //await markdownToHtml(post.content || '')
 
   return {
     props: {
