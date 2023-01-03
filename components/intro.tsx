@@ -7,6 +7,7 @@ const Intro = () => {
       alt={`Cover Image for cover image`}
       width={1300}
       height={630}
+      priority
     />
       <section className="items-left md:justify-between pl-8 mt-4">
         <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:pl-8">
