@@ -1,5 +1,9 @@
 import type Author from '../interfaces/author'
 import Image from 'next/image'
+import reactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import markdownStyles from './pub-styles.module.css'
+import ReactMarkdown from 'react-markdown'
 type Props = {
   title: string
   coverImage: string
@@ -8,6 +12,7 @@ type Props = {
   excerpt: string
   author: Author
   slug: string
+  content: string
 }
 
 const ResearchPost = ({
@@ -18,10 +23,11 @@ const ResearchPost = ({
   excerpt,
   author,
   slug,
+  content
 }: Props) => {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-8 md:gap-y-8 m-5 mb-16 '>
-              <div className="m-5 min-w-fit">
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 mt-5 mb-0 '>
+              <div className="mr-5 min-w-fit">
                 <div className='mb-5'>
                   <Image
                     src={coverImage}
@@ -49,10 +55,18 @@ const ResearchPost = ({
                 <h1 className="text-3xl text-bold mb-3 leading-snug">
                   {title}
                 </h1>
-                <h3 className="text-2xl mb-3 leading-snug">
+                <h3 className="text-2xl font-thin mb-3 leading-snug">
                   {author.name}
                 </h3>
-                <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+                <article className="mb-4 prose leading-0 ">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className={markdownStyles['markdown']}
+                    children={content}
+                    />
+                </article>
+                  
+                {/* <p className="text-lg leading-relaxed mb-4">{excerpt}</p> */}
               </div>
             </div>
   )

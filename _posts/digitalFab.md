@@ -51,7 +51,20 @@ Because all of these slides were cut to accommodate a 3” x 3” shadow box, th
 
 Using an engineering guide from Formlabs on “Creating Camera Lenses with Stereolithography”[^2], we created two heightmaps which were clear enough to produce reliable caustic effects and artistic scattering. 
 
+| ![First Image](/assets/blog/work/digitalfab/Screen+Shot+2019-06-09+at+10.52.43+PM.png) | ![Second Image](/assets/blog/work/digitalfab/Screen+Shot+2019-06-09+at+10.53.31+PM.png) | 
+|:---:|:---:|
+
+#### Right: Heightfield with a Voronoi Noise texture Left: Heightfield with a Perlin Noise texture. 
+
 By sanding and polishing the finished prints, adding a final coating of resin, and putting the prints back into the UV oven for at least another hour, the clear resin heightfields transformed from cloudy and bumpy to remarkably clear: 
+
+| ![First Image](/assets/blog/work/digitalfab/IMG_1334.jpeg) | ![Second Image](/assets/blog/work/digitalfab/DSC_3532.jpeg) | 
+|:---:|:---:|
+
+#### Right: Perlin Noise caustics projected onto a nearby wall Left: Voronoi Noise heightfield in front of a grid of LEDs
+
+| ![First Image](/assets/blog/work/digitalfab/DSC_3486.png) | ![Second Image](/assets/blog/work/digitalfab/DSC_3496.png) | 
+|:---:|:---:|
 
 Using clear resin heightmaps for lighting design has great potential for designing unique effects for both projected and head-on viewing. Using more modern graphics techniques like photon mapping would allow for an iterative visualization and design process in a 3D engine. 
 

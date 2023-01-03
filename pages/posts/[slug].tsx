@@ -26,21 +26,6 @@ export default function Post({ post, morePosts, preview }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
-  const markdown = `#### intro
-  
-  A paragraph with *emphasis* and **strong importance**. 
-
-> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-* Lists
-* [ ] todo
-* [x] done
-
-A table:
-
-| a | b |
-| - | - |
-`
 
   return (
     <Layout preview={preview}>
@@ -64,11 +49,13 @@ A table:
                 author={post.author}
                 prettyDate={post.prettyDate}
               />
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                className={markdownStyles['markdown']}
-                children={post.content}
-              />
+              <div className='grid grid-cols-1 justify-items-center text-center'>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  className={markdownStyles['markdown']}
+                  children={post.content}
+                />
+              </div>
             </article>
           </>
         )}

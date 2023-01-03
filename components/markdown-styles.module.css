@@ -1,9 +1,9 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-lg justify-items-center leading-relaxed;
 }
 
 .markdown img {
-  @apply my-5
+  @apply my-5 justify-items-center
 }
 .markdown p,
 .markdown ul,
@@ -22,3 +22,8 @@
 .markdown h4 {
   @apply text-sm
 }
+
+.markdown h5 {
+  @apply text-red-500
+}
+

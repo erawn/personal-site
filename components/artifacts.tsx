@@ -1,9 +1,3 @@
-
-import type Post from '../interfaces/post'
-import cn from 'classnames'
-import Link from 'next/link'
-import Image from 'next/image'
-import ResearchPost from './research-post'
 import Artifact from './artifact'
 type Props = {
   images: string[]

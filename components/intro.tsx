@@ -22,8 +22,15 @@ const Intro = () => {
             >
               Shaper
             </a>. 
+
+          <p className="my-4">
           Currently interested in version control, creative programming, and the intellectual history of HCI. 
+          </p>
+          <p className="">
           The best way to contact me is emailing : erawn~at~berkeley~dot~edu
+          </p>
+          
+  
           </h4>
       </section>
     </section>

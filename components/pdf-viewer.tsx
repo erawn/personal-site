@@ -1,31 +1,16 @@
-// import React from 'react';
 
-// import {
-//   Document, Page,
-// } from 'react-pdf/dist/esm/entry.webpack';
-
-// const PdfViewer = ({
-//   url, width, pageNumber
-// }) => (
-//   <Document file={url}>
-//     <Page
-//       pageNumber={pageNumber}
-//       width={width}
-//     />
-//   </Document>
-// );
-
-// export default PdfViewer;
 import { useState } from "react";
-// import default react-pdf entry
 import { Document, Page, pdfjs } from "react-pdf";
-// import pdf worker as a url, see `next.config.js` and `pdf-worker.js`
 import workerSrc from "../pdf-worker";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
-export default function PDFViewer() {
-  const [file, setFile] = useState("/assets/resume_Oct2022.pdf");
+type Props = {
+  pdfPath:string
+}
+
+export default function PDFViewer({pdfPath}: Props) {
+  const [file, setFile] = useState(pdfPath);
   const [numPages, setNumPages] = useState(null);
 
   function onFileChange(event) {
