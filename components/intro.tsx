@@ -12,8 +12,8 @@ const Intro = () => {
       <section className="items-left md:justify-between pl-8 mt-4">
         <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:pl-8">
             Hi! I'm Eric.
-          </h1>
-          <h4 className="text-left md:text-left text-lg mt-5 md:pl-8">
+        </h1>
+        <h4 className="text-left md:text-left text-lg mt-5 md:pl-8">
           I’m an HCI researcher, digital/installation artist, sound+lights+projection technician, and maker. 
           Computer Science PhD Student at UC Berkeley studying Human-Computer Interaction. 
           Thinking about aesthetics, technology, making (good on) our values. 
@@ -30,9 +30,7 @@ const Intro = () => {
           <p className="">
           The best way to contact me is emailing : erawn~at~berkeley~dot~edu
           </p>
-          
-  
-          </h4>
+        </h4>
       </section>
     </section>
   )
