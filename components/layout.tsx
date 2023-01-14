@@ -4,13 +4,14 @@ import Meta from './meta'
 
 type Props = {
   preview?: boolean
+  subpage?: string
   children: React.ReactNode
 }
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ preview, subpage = '', children }: Props) => {
   return (
     <>
-      <Meta />
+      <Meta subpage={subpage}/>
       <div className="min-h-screen">
         {/* <Alert preview={preview} /> */}
         <main>{children}</main>

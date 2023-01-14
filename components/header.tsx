@@ -21,6 +21,9 @@ const Header = () => {
             <li className="mr-6">
               <a className=" hover:text-gray-500" href="/resume">Resume</a>
             </li>
+            <li className="mr-6">
+              <a className=" text-quickpose-80 hover:text-quickpose-10" href="/quickpose">Quickpose</a>
+            </li>
           </ul>
         </section>
       </section>
