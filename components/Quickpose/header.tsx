@@ -32,8 +32,8 @@ const DropdownMenuItem = ({ title, link, icon }) => {
       <Link
         as={link}
         href={link}
-        className="flex outline-none select-none items-center object-right text-right 
-    justify-end rounded-md px-4 py-2 text-2xl focus:bg-gray-800 text-quickpose-80 hover:text-quickpose-10"
+        className="flex outline-none select-none cursor-pointer items-center object-right text-right 
+    justify-end rounded-md px-4 py-2 text-2xl hover:bg-gray-700 text-quickpose-80 hover:text-quickpose-10"
       >
         {icon}
         <span className="flex-grow font-LibreFranklin font-semibold ml-4 ">
@@ -46,24 +46,24 @@ const DropdownMenuItem = ({ title, link, icon }) => {
 
 const Header = () => {
   return (
-    <header>
-      <section className="grid grid-cols-2 items-center pl-4 pt-2 bg-black">
+    <header className="">
+      <section className="grid grid-cols-2 items-center pl-4 pt-2 pb-2 bg-darkGrey">
         <Link href={"/quickpose"} className="relative block h-200 w-100">
           <Image
             src={"/assets/quickpose/quickpose-banner-grad-transparent.png"}
             alt={`Quickpose Logo`}
-            className={"rounded-md"}
+            className={"rounded-md cursor-pointer"}
             width={250}
             height={100}
           />
         </Link>
         <section className="md:text-2xl font-LibreFranklin tracking-tighter text-center leading-tight md:pl-4">
-          <div className="md:hidden float-right pr-4 bg-black">
+          <div className="md:hidden float-right pr-4 bg-darkGrey">
             <div className="relative inline-block text-right ">
               <DropdownMenuPrimitive.Root>
                 <DropdownMenuPrimitive.Trigger asChild>
                   <Button>
-                    <HamburgerMenuIcon className="scale-[2.0] " />
+                    <HamburgerMenuIcon className="scale-[2.0] cursor-pointer" />
                   </Button>
                 </DropdownMenuPrimitive.Trigger>
 
@@ -74,17 +74,17 @@ const Header = () => {
                     className={cx(
                       " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
                       "w-470 rounded-lg px-1.5 py-1 shadow-md outline-none",
-                      "bg-black ring-2 ring-quickpose-80"
+                      "bg-darkGrey ring-2 ring-quickpose-80"
                     )}
                   >
                     <DropdownMenuItem
                       title={"Docs"}
-                      link={"/docs"}
+                      link={"/quickpose-docs"}
                       icon={<ReaderIcon className="scale-[1.3]" />}
                     />
                     <DropdownMenuItem
                       title={"Research"}
-                      link={"/quickpose_research"}
+                      link={"/quickpose-research"}
                       icon={<InfoCircledIcon className="scale-[1.3]" />}
                     />
                     <DropdownMenuItem
@@ -103,22 +103,22 @@ const Header = () => {
             </div>
           </div>
           <ul className="flex space-x-6 text-quickpose-80 float-right max-md:hidden font-LibreFranklin font-semibold items-center">
-            <li className="">
-              <a className="  hover:text-quickpose-10 " href="/docs">
+            <li className="cursor-pointer">
+              <a className="  hover:text-quickpose-10 " href="/quickpose-docs">
                 Docs
               </a>
             </li>
-            <li className="">
+            <li className="cursor-pointer">
               <a
                 className=" hover:text-quickpose-10 "
-                href="/quickpose_research"
+                href="/quickpose-research"
               >
                 Research
               </a>
             </li>
-            <li className="">
+            <li className="cursor-pointer">
               <a
-                className=" hover:text-quickpose-10 "
+                className="cursor-pointer hover:text-quickpose-10 "
                 href="https://github.com/erawn/Quickpose"
               >
                 Github
@@ -128,7 +128,7 @@ const Header = () => {
               <Link
                 as={`https://quickpose.ericrawn.media/`}
                 href="https://quickpose.ericrawn.media/"
-                className="flex select-none items-center outline-none ring-2 ring-quickpose-10 
+                className="flex select-none cursor-pointer items-center outline-none ring-2 ring-quickpose-10 
                 object-right text-right rounded-md px-2 py-1 text-quickpose-10
                 hover:bg-quickpose-10 hover:text-black hover:ring-black"
               >

@@ -3,9 +3,11 @@ import { EXAMPLE_PATH } from "../../lib/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import * as Separator from "@radix-ui/react-separator";
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 border-t border-neutral-200">
+    <footer className="bg-gray-800 border-t-0 border-neutral-200">
+      <Separator.Root className="h-1 bg-gradient-to-l from-quickpose-10 to-quickpose-80" />
       <Container>
         <div className="flex justify-between items-center space-x-6">
           <div className="py-5 flex items-center">

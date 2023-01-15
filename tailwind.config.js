@@ -4,6 +4,10 @@ module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
     extend: {
+      backgroundImage: {
+        blur: "url('/assets/quickpose/blur-background.png')",
+        unblur: "url('/assets/quickpose/unblur.png')",
+      },
       fontFamily: {
         LibreFranklin: ["LibreFranklin", "sans-serif"],
         LibreFranklinItalic: ["LibreFranklinItalic", "sans-serif"],
@@ -25,6 +29,7 @@ module.exports = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
+        darkGrey: "#1b2024",
         quickpose: {
           10: "#89F8FE",
           20: "#84EEFE",
