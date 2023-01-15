@@ -87,6 +87,7 @@ export default function Index() {
                   // })}
                   width={1300}
                   height={630}
+                  className="rounded-md"
                 />
               </div>
             </div>
@@ -107,6 +108,7 @@ export default function Index() {
                 width={1300}
                 height={630}
                 quality={100}
+                className="rounded-md"
               />
             </div>
           </div>
@@ -123,6 +125,7 @@ export default function Index() {
                   width={1875}
                   height={1030}
                   quality={100}
+                  className="rounded-md"
                 />
               </div>
             </div>

@@ -19,7 +19,7 @@ export default function Index() {
         <Head>
           <title>Quickpose: A Version Control Tool for Processing</title>
         </Head>
-        <div className="sticky top-0 h-15">
+        <div className="sticky top-0 h-15 z-50">
           <Header />
         </div>
 
