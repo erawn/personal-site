@@ -137,7 +137,7 @@ const DocsContent = ({ entries }) => {
 const entryWrapper = (parent, id: any) => {
   return (
     <div className="my-5 mr-10 prose font-light text-gray-200">
-      <div className="mb-4 ml-5 prose leading-0 ">
+      <div className="mb-4 ml-5 leading-loose ">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
