@@ -6,6 +6,7 @@ import Footer from "../components/Quickpose/footer";
 import { useState } from "react";
 import DocsContent, { DocsItems } from "../components/Quickpose/docs-content";
 import { getDocFiles } from "../lib/api";
+import Layout from "../components/Quickpose/layout";
 const darkGrey = "#1b2024";
 const quickpose = {
   10: "#89F8FE",
@@ -33,43 +34,45 @@ export default function Index({ allEntries }: Props) {
     setSelectedLabel(link);
   };
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#7FE4FE",
-          colorTextBase: "#FFFFFF",
-          colorPrimaryBg: darkGrey,
-          fontSize: 17,
-          lineWidth: 3,
-          borderRadius: 10,
-          borderRadiusSM: 10,
-        },
-      }}
-    >
-      <div className="">
-        <Meta subpage={"quickpose/"} />
+    <div className="bg-darkGrey">
+      <Layout subpage="quickpose/">
         <Head>
           <title>Quickpose: A Version Control Tool for Processing</title>
         </Head>
         <Header />
 
-        <section className="bg-darkGrey text-white ">
-          <div className="grid grid-cols-[200px_auto] ">
-            <div className="">
-              <Anchor
-                className="text-white  pt-2 font-LibreFranklin text-xl"
-                offsetTop={60}
-                targetOffset={200}
-                onChange={onChange}
-                items={DocsItems()}
-              />
+        <section className="bg-darkGrey text-white flex">
+          <div className="grid sm:grid-cols-[200px_auto] max-sm:grid-flow-col-dense">
+            <div className="max-sm:hidden">
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: "#7FE4FE",
+                    colorTextBase: "#FFFFFF",
+                    colorPrimaryBg: darkGrey,
+                    fontSize: 17,
+                    lineWidth: 3,
+                    borderRadius: 10,
+                    borderRadiusSM: 10,
+                  },
+                }}
+              >
+                <Anchor
+                  className="text-white  pt-2 font-LibreFranklin text-xl"
+                  offsetTop={60}
+                  targetOffset={200}
+                  onChange={onChange}
+                  items={DocsItems()}
+                />
+              </ConfigProvider>
             </div>
-            <DocsContent entries={allEntries} />
+            <div className="max-sm:pl-3">
+              <DocsContent entries={allEntries} />
+            </div>
           </div>
         </section>
-        <Footer />
-      </div>
-    </ConfigProvider>
+      </Layout>
+    </div>
   );
 }
 

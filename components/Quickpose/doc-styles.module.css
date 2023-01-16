@@ -9,7 +9,7 @@
   @apply text-quickpose-80 hover:bg-quickpose-10
 }
 .markdown th {
-  @apply font-light text-white text-base
+  @apply font-light text-white text-base text-left  stroke-darkGrey
 }
 .markdown p {
   @apply my-2 leading-snug text-white text-base
@@ -18,13 +18,19 @@
 .markdown strong {
   @apply text-white
 }
-
+.markdown thead {
+  @apply border-none
+}
 .markdown em {
   @apply text-white
 }
 
+
+.markdown .exportimage {
+  @apply ring-2
+}
 .markdown tr {
-  @apply flex justify-center items-center
+  @apply flex items-center text-left
 }
 
 

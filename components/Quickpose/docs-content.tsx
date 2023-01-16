@@ -16,8 +16,8 @@ const buildSubTitle = (title: string) => {
 };
 const buildTitle = (title: string, id: string) => {
   return (
-    <div className="bg-darkGray mb-0 mt-0 sticky top-16 bg-darkGrey z-30 h-16 min-w-full whitespace-nowrap">
-      <div className="absolute w-full min-w-full -inset-y-2 bg-darkGrey mb-10">
+    <div className="bg-darkGray mb-0 mt-0 sm:sticky top-16 bg-darkGrey z-30 h-16 min-w-full whitespace-nowrap">
+      <div className="sm:absolute w-full min-w-full -inset-y-2 bg-darkGrey mb-10">
         <Separator.Root className="h-[1px] bg-gradient-to-l from-quickpose-10 to-quickpose-80" />
         <div className="rounded-lg mb-5 mt-0 max-w-lg text-3xl tracking-wide leading-8 text-left font-bold text-white">
           <div className="mt-4 ">{title}</div>
@@ -57,11 +57,22 @@ var docContent: docEntry[] = [
     title: "Features",
     subEntry: [
       {
-        key: "features",
-        href: "#features",
-        title: "Features",
+        key: "checkpoints",
+        href: "#checkpoints",
+        title: "Checkpoints",
+      },
+      {
+        key: "exportbycolor",
+        href: "#exportbycolor",
+        title: "Export By Color",
       },
     ],
+  },
+
+  {
+    key: "faq",
+    href: "#faq",
+    title: "FAQ",
   },
 ];
 
@@ -70,11 +81,14 @@ function DocsItems(): AnchorLinkItemProps[] {
     key: entry.key,
     href: entry.href,
     title: entry.title,
-    children: entry.subEntry.map((child) => ({
-      key: child.key,
-      href: child.href,
-      title: child.title,
-    })),
+    children:
+      entry.subEntry !== undefined
+        ? entry.subEntry.map((child) => ({
+            key: child.key,
+            href: child.href,
+            title: child.title,
+          }))
+        : null,
   }));
   return items;
 }
@@ -94,22 +108,24 @@ const DocsContent = ({ entries }) => {
               <div id={entry.key}>
                 {parent !== undefined ? entryWrapper(parent, entry.key) : ""}
               </div>
-              {entry.subEntry.map((child) => {
-                const childDoc = entries.find(
-                  (slug) => slug.title === child.key
-                );
-                if (childDoc === undefined) {
-                  console.log(child.key);
-                }
-                return (
-                  <div id={child.key}>
-                    {buildSubTitle(child.title)}
-                    {childDoc !== undefined
-                      ? entryWrapper(childDoc, child.key)
-                      : ""}
-                  </div>
-                );
-              })}
+              {entry.subEntry !== undefined
+                ? entry.subEntry.map((child) => {
+                    const childDoc = entries.find(
+                      (slug) => slug.title === child.key
+                    );
+                    if (childDoc === undefined) {
+                      console.log(child.key);
+                    }
+                    return (
+                      <div id={child.key}>
+                        {buildSubTitle(child.title)}
+                        {childDoc !== undefined
+                          ? entryWrapper(childDoc, child.key)
+                          : ""}
+                      </div>
+                    );
+                  })
+                : null}
             </>
           );
         })}

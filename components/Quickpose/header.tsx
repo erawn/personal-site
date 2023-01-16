@@ -33,7 +33,7 @@ const DropdownMenuItem = ({ title, link, icon }) => {
       <Link
         as={link}
         href={link}
-        className="flex outline-none select-none cursor-pointer items-center object-right text-right 
+        className="flex flex-row outline-none select-none cursor-pointer items-center object-right text-right 
     justify-end rounded-md px-4 py-2 text-2xl hover:bg-gray-700 text-quickpose-80 hover:text-quickpose-10"
       >
         {icon}
@@ -47,9 +47,9 @@ const DropdownMenuItem = ({ title, link, icon }) => {
 
 const Header = () => {
   return (
-    <div className="sticky top-0 h-15 left-0 bottom-16 z-40">
+    <div className="sm:sticky top-0 h-15 left-0 bottom-16 z-40">
       <header className="">
-        <section className="top-0 h-15 left-0 right-0 ring-2 flex flex-row justify-between items-center pl-4 pt-2 pb-2 bg-darkGrey">
+        <section className="top-0 h-15 left-0 right-0 flex flex-row justify-between items-center pl-4 pt-2 pb-2 bg-darkGrey">
           <Link href={"/quickpose"} className="relative block h-200 w-100">
             <Image
               src={"/assets/quickpose/quickpose-banner-grad-transparent.png"}
@@ -59,7 +59,7 @@ const Header = () => {
               height={100}
             />
           </Link>
-          <section className="md:text-2xl font-LibreFranklin tracking-tighter text-center leading-tight md:pl-4">
+          <section className="md:text-2xl relative font-LibreFranklin tracking-tighter text-center leading-tight md:pl-4">
             <div className="md:hidden float-right pr-4 bg-darkGrey">
               <div className="relative inline-block text-right ">
                 <DropdownMenuPrimitive.Root>
@@ -75,7 +75,7 @@ const Header = () => {
                       sideOffset={5}
                       className={cx(
                         " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-                        "w-470 rounded-lg px-1.5 py-1 shadow-md outline-none",
+                        "w-48 rounded-lg px-1.5 py-1 shadow-md outline-none",
                         "bg-darkGrey ring-2 ring-quickpose-80 z-50"
                       )}
                     >
