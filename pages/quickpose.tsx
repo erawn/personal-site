@@ -52,7 +52,7 @@ export default function Index() {
             </div>
 
             <div className=" pl-9 pr-9 pb-5 flex justify-center">
-              <div className="rounded-lg bg-gra max-w-lg text-xl tracking-wide leading-8 text-center text-gray-200">
+              <div className="rounded-lg max-w-lg text-xl tracking-wide leading-8 text-center text-gray-200">
                 Quickpose is a version control system for{" "}
                 <Link
                   as={`https://processing.org/`}
