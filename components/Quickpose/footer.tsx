@@ -20,8 +20,17 @@ const Footer = () => {
                 height={100}
               />
             </Link>
-            <div className="text-sm tracking-tighter leading-tight text-left ml-5 text-gray-500 ">
-              Copyright © 2023 Eric Rawn. All rights reserved.
+            <div className="flex flex-col ml-5">
+              <div className="text-sm tracking-tighter leading-tight text-left  text-gray-500 ">
+                Copyright © 2023{" "}
+                <Link
+                  href={"https://ericrawn.media/"}
+                  className="text-quickpose-10 hover:text-quickpose-80"
+                >
+                  Eric Rawn.{" "}
+                </Link>
+                All rights reserved.
+              </div>
             </div>
           </div>
           <div></div>

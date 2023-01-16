@@ -3,14 +3,46 @@ import Header from "../components/Quickpose/header";
 import { Anchor, Row, Col, ConfigProvider } from "antd";
 import Meta from "../components/meta";
 import Footer from "../components/Quickpose/footer";
-import styled from "styled-components";
-export default function Index() {
+import { useState } from "react";
+import DocsContent, { DocsItems } from "../components/Quickpose/docs-content";
+import { getDocFiles } from "../lib/api";
+const darkGrey = "#1b2024";
+const quickpose = {
+  10: "#89F8FE",
+  20: "#84EEFE",
+  30: "#7FE4FE",
+  40: "#7AD9FE",
+  50: "#75CEFF",
+  60: "#6FC1FF",
+  70: "#6AB4FF",
+  80: "#65A5FF",
+};
+type Items = {
+  [key: string]: string;
+};
+type Props = {
+  allEntries: Items[];
+};
+export default function Index({ allEntries }: Props) {
+  const [selectedLabel, setSelectedLabel] =
+    useState<string>("#getting-started");
+
+  // let getCurrentAnchor = () => ;
+  const onChange = (link: string) => {
+    console.log("Anchor:OnChange", link);
+    setSelectedLabel(link);
+  };
   return (
     <ConfigProvider
       theme={{
         token: {
           colorPrimary: "#7FE4FE",
           colorTextBase: "#FFFFFF",
+          colorPrimaryBg: darkGrey,
+          fontSize: 17,
+          lineWidth: 3,
+          borderRadius: 10,
+          borderRadiusSM: 10,
         },
       }}
     >
@@ -19,65 +51,32 @@ export default function Index() {
         <Head>
           <title>Quickpose: A Version Control Tool for Processing</title>
         </Head>
-        <div className="sticky top-0 h-15 z-50">
-          <Header />
-        </div>
+        <Header />
 
-        <section className="bg-darkGrey text-white">
-          <Row>
-            <Col span={4}>
+        <section className="bg-darkGrey text-white ">
+          <div className="grid grid-cols-[200px_auto] ">
+            <div className="">
               <Anchor
-                className="text-white"
+                className="text-white  pt-2 font-LibreFranklin text-xl"
                 offsetTop={60}
-                items={[
-                  {
-                    key: "part-1",
-                    href: "#part-1",
-                    title: "Part 1",
-                  },
-                  {
-                    key: "part-2",
-                    href: "#part-2",
-                    title: "Part 2",
-                  },
-                  {
-                    key: "part-3",
-                    href: "#part-3",
-                    title: "Part 3",
-                    children: [
-                      {
-                        key: "4",
-                        href: "#anchor-props",
-                        title: "Anchor Props",
-                      },
-                      {
-                        key: "5",
-                        href: "#link-props",
-                        title: "Link Props",
-                      },
-                    ],
-                  },
-                ]}
+                targetOffset={200}
+                onChange={onChange}
+                items={DocsItems()}
               />
-            </Col>
-            <Col span={20}>
-              <div
-                id="part-1"
-                style={{ height: "100vh", background: "rgba(255,0,0,0.02)" }}
-              />
-              <div
-                id="part-2"
-                style={{ height: "100vh", background: "rgba(0,255,0,0.02)" }}
-              />
-              <div
-                id="part-3"
-                style={{ height: "100vh", background: "rgba(0,0,255,0.02)" }}
-              />
-            </Col>
-          </Row>
+            </div>
+            <DocsContent entries={allEntries} />
+          </div>
         </section>
         <Footer />
       </div>
     </ConfigProvider>
   );
 }
+
+export const getStaticProps = async () => {
+  const allEntries = getDocFiles();
+
+  return {
+    props: { allEntries },
+  };
+};
