@@ -1,13 +1,9 @@
-import Container from "../container";
-import { EXAMPLE_PATH } from "../../lib/constants";
-import Link from "next/link";
-import Image from "next/image";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import * as Separator from "@radix-ui/react-separator";
 import { AnchorLinkItemProps } from "antd/es/anchor/Anchor";
 import remarkGfm from "remark-gfm";
 import markdownStyles from "./doc-styles.module.css";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 interface docEntry {
   key: string;
@@ -20,13 +16,10 @@ const buildSubTitle = (title: string) => {
 };
 const buildTitle = (title: string, id: string) => {
   return (
-    <div
-      id={id}
-      className="bg-darkGray mb-0 mt-0 sticky top-16 bg-darkGrey z-30 h-16 min-w-full whitespace-nowrap"
-    >
+    <div className="bg-darkGray mb-0 mt-0 sticky top-16 bg-darkGrey z-30 h-16 min-w-full whitespace-nowrap">
       <div className="absolute w-full min-w-full -inset-y-2 bg-darkGrey mb-10">
         <Separator.Root className="h-[1px] bg-gradient-to-l from-quickpose-10 to-quickpose-80" />
-        <div className="rounded-lg mb-5 mt-0 max-w-lg text-3xl tracking-wide leading-8 text-center font-bold text-white">
+        <div className="rounded-lg mb-5 mt-0 max-w-lg text-3xl tracking-wide leading-8 text-left font-bold text-white">
           <div className="mt-4 ">{title}</div>
         </div>
         <Separator.Root className="h-[1px] bg-gradient-to-l from-quickpose-10 to-quickpose-80" />
@@ -50,6 +43,11 @@ var docContent: docEntry[] = [
         key: "installation",
         href: "#installation",
         title: "Installation",
+      },
+      {
+        key: "basics",
+        href: "#basics",
+        title: "The Basics",
       },
     ],
   },
@@ -93,7 +91,9 @@ const DocsContent = ({ entries }) => {
           return (
             <>
               {buildTitle(entry.title, entry.key)}
-              {parent !== undefined ? entryWrapper(parent, entry.key) : ""}
+              <div id={entry.key}>
+                {parent !== undefined ? entryWrapper(parent, entry.key) : ""}
+              </div>
               {entry.subEntry.map((child) => {
                 const childDoc = entries.find(
                   (slug) => slug.title === child.key
@@ -102,12 +102,12 @@ const DocsContent = ({ entries }) => {
                   console.log(child.key);
                 }
                 return (
-                  <>
+                  <div id={child.key}>
                     {buildSubTitle(child.title)}
                     {childDoc !== undefined
                       ? entryWrapper(childDoc, child.key)
                       : ""}
-                  </>
+                  </div>
                 );
               })}
             </>
@@ -119,17 +119,15 @@ const DocsContent = ({ entries }) => {
 };
 
 const entryWrapper = (parent, id: any) => {
-  console.log(parent, id);
   return (
-    <div id={id}>
-      <div className="my-5 mr-10 prose font-light text-gray-200">
-        <div className="mb-4 prose leading-0 ">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            className={markdownStyles["markdown"]}
-            children={parent.content}
-          />
-        </div>
+    <div className="my-5 mr-10 prose font-light text-gray-200">
+      <div className="mb-4 ml-5 prose leading-0 ">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
+          className={markdownStyles["markdown"]}
+          children={parent.content}
+        />
       </div>
     </div>
   );

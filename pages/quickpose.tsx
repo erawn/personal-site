@@ -80,7 +80,7 @@ export default function Index() {
             <div className="mr-5 min-w-fit">
               <div className="mb-5">
                 <Image
-                  src={"/assets/quickpose/dirgraph.png"}
+                  src={"/assets/quickpose/unblur.png"}
                   alt={`Cover Image for Quickpose Research Paper`}
                   // className={cn('shadow-sm w-full', {
                   //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,

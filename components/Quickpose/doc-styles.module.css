@@ -1,14 +1,32 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base text-white leading-relaxed;
 }
 
 .markdown img {
   @apply my-5
 }
-
-.markdown p {
-  @apply my-2 leading-snug
+.markdown a {
+  @apply text-quickpose-80 hover:bg-quickpose-10
 }
+.markdown th {
+  @apply font-light text-white text-base
+}
+.markdown p {
+  @apply my-2 leading-snug text-white text-base
+}
+
+.markdown strong {
+  @apply text-white
+}
+
+.markdown em {
+  @apply text-white
+}
+
+.markdown tr {
+  @apply flex justify-center items-center
+}
+
 
 .markdown ul,
 .markdown ol,
@@ -17,11 +35,11 @@
 }
 
 .markdown h2 {
-  @apply text-4xl mt-12 mb-4 leading-snug;
+  @apply text-4xl mt-12 mb-4 leading-snug text-white;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug text-white;
 }
 .markdown h4 {
   @apply text-sm
