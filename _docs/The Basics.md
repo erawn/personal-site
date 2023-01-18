@@ -32,3 +32,8 @@ Quickpose will automatically use whatever is called **Render.png** in your sketc
   }
 ``` 
 
+### Settings
+
+| There are two settings to know about right away: first, you can toggle **Autorun Sketch** to automatically re-run your Processing sketch when you switch versions. Below that, **Pause Simulation** will stop the force simulation that pushes the versions around. If anything glitchy happens, turning this on should let you keep working.  | <img src="/assets/quickpose/menus.png" style="width:800px;"> | 
+|:---|:---|
+
