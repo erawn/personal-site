@@ -1,6 +1,5 @@
 import type Author from '../interfaces/author'
 import Image from 'next/image'
-import reactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from './pub-styles.module.css'
 import ReactMarkdown from 'react-markdown'
