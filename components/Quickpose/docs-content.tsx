@@ -143,6 +143,7 @@ const entryWrapper = (parent, id: any) => {
           rehypePlugins={[rehypeRaw]}
           className={markdownStyles["markdown"]}
           children={parent.content}
+          key={id}
         />
       </div>
     </div>

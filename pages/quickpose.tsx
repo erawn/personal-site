@@ -14,17 +14,9 @@ import Link from "next/link";
 import { DownloadIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
-import ReactGA from "react-ga";
-import useAnalyticsEventTracker from "../util/useAnalyticsEventTracker";
 
 export default function Index() {
-  ReactGA.initialize(process.env.GA_ID_PORTFOLIO);
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-  const gaEventTracker = useAnalyticsEventTracker("Downloads");
-  const postDl = () => gaEventTracker("download");
+  const postDl = () => {};
   const { download } = useDownloadFile(
     "https://github.com/erawn/Quickpose-Backend/releases/latest",
     postDl
