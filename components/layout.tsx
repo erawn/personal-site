@@ -15,7 +15,7 @@ const Layout = ({ preview, subpage = "", children }: Props) => {
       <div className="container">
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-J5P348PSPX"
+          src="https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID_PORTFOLIO}"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -24,7 +24,7 @@ const Layout = ({ preview, subpage = "", children }: Props) => {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-J5P348PSPX');
+          gtag('config', process.env.GA_ID_PORTFOLIO);
         `}
         </Script>
       </div>
