@@ -74,7 +74,7 @@ export default function Index() {
         <section className=" bg-darkGrey font-LibreFranklin text-white">
           <Separator.Root className="h-2 bg-gradient-to-r from-quickpose-10 to-quickpose-80" />
           <div className="grid px-5 py-3 grid-cols-1 justify-items-center items-center sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 mt-5 mb-0 ">
-            <h1 className=" align-middle font-LibreFranklin text-3xl md:text-4xl font-light mb-3 leading-loose pl-5">
+            <h1 className=" align-middle font-Inter text-3xl md:text-4xl font-base mb-3 leading-loose pl-5">
               See every version of your sketch on an interactive canvas
             </h1>
             <div className="mr-5 min-w-fit">
@@ -95,7 +95,7 @@ export default function Index() {
           <Separator.Root className="h-2 bg-gradient-to-l from-quickpose-10 to-quickpose-80" />
 
           <div className="flexflex-col justify-center">
-            <div className="align-middle font-LibreFranklin text-3xl md:text-4xl px-4 py-9 font-light leading-loose text-center">
+            <div className="align-middle font-Inter text-3xl md:text-4xl px-4 py-9 leading-loose text-center">
               Both your code and render update in realtime
             </div>
             <div className="mb-8 mx-8">
@@ -130,10 +130,10 @@ export default function Index() {
               </div>
             </div>
             <div>
-              <h1 className="pl-4 align-middle font-LibreFranklin text-3xl md:text-4xl font-light mb-10 leading-relaxed">
+              <h1 className="pl-4 align-middle font-Inter text-3xl md:text-4xl font-base mb-10 leading-relaxed">
                 Add Notes, Annotations, Images, and Links
               </h1>
-              <h1 className="pl-4 align-middle font-LibreFranklin text-3xl md:text-4xl font-light mb-3 leading-relaxed">
+              <h1 className="pl-4 align-middle font-Inter text-3xl md:text-4xl font-base mb-3 leading-relaxed">
                 Arrange and style your creative coding journey, wherever it
                 takes you
               </h1>

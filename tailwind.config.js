@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         LibreFranklin: ["LibreFranklin", "sans-serif"],
         LibreFranklinItalic: ["LibreFranklinItalic", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
