@@ -9,12 +9,26 @@ import { CMS_NAME } from "../lib/constants";
 import Post from "../interfaces/post";
 import Header from "../components/Quickpose/header";
 import Publications from "../components/publications";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { DownloadIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
+import ReactGA from "react-ga";
+import useAnalyticsEventTracker from "../util/useAnalyticsEventTracker";
+
 export default function Index() {
+  ReactGA.initialize(process.env.GA_ID_PORTFOLIO);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+  const gaEventTracker = useAnalyticsEventTracker("Downloads");
+  const postDl = () => gaEventTracker("download");
+  const { download } = useDownloadFile(
+    "https://github.com/erawn/Quickpose-Backend/releases/latest",
+    postDl
+  );
   return (
     <>
       <Layout subpage="quickpose/">
@@ -36,12 +50,12 @@ export default function Index() {
             <div className="flex pb-10 justify-center items-center">
               <button>
                 <Link
-                  as={`https://quickpose.ericrawn.media/`}
-                  href="https://quickpose.ericrawn.media/"
+                  href={"/quickpose-docs"}
                   className="flex select-none items-center outline 
                 ring-2  rounded-md px-2 py-1
                 hover:bg-quickpose-10 hover:text-black hover:ring-black
                 text-quickpose-10 bg-black ring-quickpose-10"
+                  onClick={download}
                 >
                   {<DownloadIcon className="scale-150" />}
                   <span className="font-LibreFranklin text-xl font-semibold ml-2">
@@ -144,3 +158,38 @@ export default function Index() {
     </>
   );
 }
+
+export const useDownloadFile = (
+  downloadLink: string,
+  postDownloading: () => void
+) => {
+  const download = async () => {
+    try {
+      // const { data } = await fetch(link, { mode: "no-cors" }).then((response) =>
+      //   response.json()
+      // );
+      // console.log(data);
+      // let a = document.createElement("a");
+      // setFileUrl("");
+      // setFileName(link);
+      // a.href = URL.createObjectURL(new Blob([data]));
+      // a.download = "Quickpose.zip";
+      // a.click();
+
+      // URL.revokeObjectURL(a.href);
+
+      // const response = await fetch(downloadLink, { mode: "no-cors" });
+      // const blob = await response.blob();
+      // const blobUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = "/assets/Quickpose-v1.zip";
+      link.download = "Quickpose" + "." + "zip";
+      link.click();
+      postDownloading();
+    } catch (error) {
+      //onError();
+    }
+  };
+
+  return { download };
+};
