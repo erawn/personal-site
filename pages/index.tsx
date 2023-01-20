@@ -1,26 +1,32 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-import Post from '../interfaces/post'
-import Header from '../components/header'
+import Container from "../components/container";
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import Layout from "../components/layout";
+import { getAllPosts } from "../lib/api";
+import Head from "next/head";
+import { CMS_NAME } from "../lib/constants";
+import Post from "../interfaces/post";
+import Header from "../components/header";
+import { pageview } from "../util/gtag";
+import { useEffect } from "react";
 type Props = {
-  allPosts: Post[]
-}
+  allPosts: Post[];
+};
 
 export default function Index({ allPosts }: Props) {
-  const workPosts = allPosts.filter(post => post.type === 'work')
+  const workPosts = allPosts.filter((post) => post.type === "work");
+  useEffect(() => {
+    pageview(new URL("https://www.ericrawn.media/"));
+  });
+
   return (
     <>
       <Layout>
         <Head>
           <title>Eric Rawn Portfolio</title>
         </Head>
-        <Header/>
+        <Header />
         <Container>
           <Intro />
           {/* {heroPost && (
@@ -37,22 +43,22 @@ export default function Index({ allPosts }: Props) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'prettyDate',
-    'excerpt',
-    'type',
-  ])
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "prettyDate",
+    "excerpt",
+    "type",
+  ]);
 
   return {
     props: { allPosts },
-  }
-}
+  };
+};

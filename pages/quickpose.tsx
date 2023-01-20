@@ -14,7 +14,7 @@ import Link from "next/link";
 import { DownloadIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
-
+import { pageview } from "../util/gtag";
 export default function Index() {
   const postDl = () => {
     window.gtag("event", "download");
@@ -23,6 +23,10 @@ export default function Index() {
     "https://github.com/erawn/Quickpose-Backend/releases/latest",
     postDl
   );
+  useEffect(() => {
+    pageview(new URL("https://www.ericrawn.media/quickpose"));
+  });
+
   return (
     <>
       <Layout subpage="quickpose/">

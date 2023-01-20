@@ -19,7 +19,12 @@ import {
 } from "@radix-ui/react-icons";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
+import { pageview } from "../util/gtag";
 export default function Index() {
+  useEffect(() => {
+    pageview(new URL("https://www.ericrawn.media/quickpose-research"));
+  });
+  
   return (
     <>
       <div className="bg-darkGrey">

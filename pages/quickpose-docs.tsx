@@ -3,10 +3,11 @@ import Header from "../components/Quickpose/header";
 import { Anchor, Row, Col, ConfigProvider } from "antd";
 import Meta from "../components/meta";
 import Footer from "../components/Quickpose/footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DocsContent, { DocsItems } from "../components/Quickpose/docs-content";
 import { getDocFiles } from "../lib/api";
 import Layout from "../components/Quickpose/layout";
+import { pageview } from "../util/gtag";
 const darkGrey = "#1b2024";
 const quickpose = {
   10: "#89F8FE",
@@ -33,6 +34,10 @@ export default function Index({ allEntries }: Props) {
     console.log("Anchor:OnChange", link);
     setSelectedLabel(link);
   };
+  useEffect(() => {
+    pageview(new URL("https://www.ericrawn.media/quickpose-docs"));
+  });
+
   return (
     <div className="bg-darkGrey">
       <Layout subpage="quickpose/">
