@@ -16,7 +16,9 @@ import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
 
 export default function Index() {
-  const postDl = () => {};
+  const postDl = () => {
+    window.gtag("event", "download");
+  };
   const { download } = useDownloadFile(
     "https://github.com/erawn/Quickpose-Backend/releases/latest",
     postDl
