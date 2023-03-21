@@ -100,7 +100,7 @@ export default function Index() {
                 </h3>
                 <div className="flex font-bold pb-3 space-x-4">
                   <Link
-                    as={`/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf`}
+                    as={`Quickpose_CHI23_Rawn.pdf`}
                     href="/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf"
                     className="flex select-none items-center outline-none 
                 ring-2  rounded-md px-2 py-1
@@ -113,7 +113,7 @@ export default function Index() {
                     </span>
                   </Link>
                   <Link
-                    as={`/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf`}
+                    as={`Quickpose_CHI23_Rawn.pdf`}
                     href="/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf"
                     className="flex select-none items-center outline-none 
                 ring-2  rounded-md px-2 py-1
