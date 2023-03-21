@@ -8,6 +8,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Post from "../interfaces/post";
 import Header from "../components/header";
+import Publications from "../components/publications";
 import { pageview } from "../util/gtag";
 import { useEffect } from "react";
 type Props = {
@@ -15,11 +16,11 @@ type Props = {
 };
 
 export default function Index({ allPosts }: Props) {
-  const workPosts = allPosts.filter((post) => post.type === "work");
+  const researchPosts = allPosts.filter((post) => post.type === "publication");
+
   useEffect(() => {
     pageview(new URL("https://www.ericrawn.media/"));
   });
-
   return (
     <>
       <Layout>
@@ -27,19 +28,9 @@ export default function Index({ allPosts }: Props) {
           <title>Eric Rawn Portfolio</title>
         </Head>
         <Header />
+        <Intro />
         <Container>
-          <Intro />
-          {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )} */}
-          {workPosts.length > 0 && <MoreStories posts={workPosts} />}
+          {allPosts.length > 0 && <Publications posts={researchPosts} />}
         </Container>
       </Layout>
     </>
@@ -53,9 +44,10 @@ export const getStaticProps = async () => {
     "slug",
     "author",
     "coverImage",
-    "prettyDate",
+    "secondImage",
     "excerpt",
     "type",
+    "content",
   ]);
 
   return {

@@ -1,7 +1,13 @@
 ---
 title: 'faq'
 ---
+### Participating in Research
 
+Quickpose is an ongoing research project that you can participate in! If you'd like to send anonymous usage data to help our research, you can opt-in at the pop-up screen when you open Quickpose (you can set a default preference if you don't want to go through this pop-up on every new project). At any time you can opt-in or opt-out in the settings for the project (Menu->Preferences->Send Usage Data). For more information, please look at the [consent form for research](https://github.com/erawn/Quickpose/files/11023935/Quickpose_Informed_Consent.pdf). If you have any questions, you can always email me at erawn 'at' berkeley 'dot' edu. 
+
+### What information is collected about me?
+
+If you don't opt-in to research, I won't collect any data about your project. There is a google analytics tag on the website so I can get a rough estimate of how often Quickpose is being used (this can be disabled with an ad-blocker, if you wish), but this is the only data I recieve if you use Quickpose without opting into research. If you do participate in research, I'll collect anonymous data about your usage (you can look at the logs in each quickpose project, in the "archive" folder. The ones sent to the analytics server are called "UsageLogs.log"). I won't send any information about the content of your projects (programs, outputs, what you write in the canvas, etc), I'll only collect metadata about those events that isn't personally identifiable, like how often you fork, or the number of edits you made to a version before forking. Detailed information is in the consent form linked above. 
 
 ### Are my files remotely stored anywhere?
 
