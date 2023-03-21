@@ -24,7 +24,7 @@ export default function Index() {
   useEffect(() => {
     pageview(new URL("https://www.ericrawn.media/quickpose-research"));
   });
-  
+
   return (
     <>
       <div className="bg-darkGrey">
@@ -100,8 +100,8 @@ export default function Index() {
                 </h3>
                 <div className="flex font-bold pb-3 space-x-4">
                   <Link
-                    as={`https://quickpose.ericrawn.media/`}
-                    href="https://quickpose.ericrawn.media/"
+                    as={`/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf`}
+                    href="/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf"
                     className="flex select-none items-center outline-none 
                 ring-2  rounded-md px-2 py-1
                 hover:bg-quickpose-10 hover:text-black hover:ring-black
@@ -113,8 +113,8 @@ export default function Index() {
                     </span>
                   </Link>
                   <Link
-                    as={`https://quickpose.ericrawn.media/`}
-                    href="https://quickpose.ericrawn.media/"
+                    as={`/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf`}
+                    href="/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf"
                     className="flex select-none items-center outline-none 
                 ring-2  rounded-md px-2 py-1
                 hover:bg-quickpose-10 hover:text-black hover:ring-black
