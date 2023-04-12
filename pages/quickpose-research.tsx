@@ -59,34 +59,8 @@ export default function Index() {
           </section>
           <section className="bg-darkGrey text-white">
             <Separator.Root className="h-1 bg-gradient-to-r from-quickpose-10 to-quickpose-80" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 mt-10 mb-0 mx-5 ">
-              <div className="mr-5 min-w-fit">
-                <div className="mb-5">
-                  <Image
-                    src={"/assets/quickpose/quickposetop.jpg"}
-                    alt={`Cover Image for Quickpose Research Paper`}
-                    // className={cn('shadow-sm w-full', {
-                    //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
-                    // })}
-                    className="rounded-2xl"
-                    width={1300}
-                    height={630}
-                  />
-                </div>
-                <div className="mb-5">
-                  <Image
-                    src={"/assets/quickpose/dirgraph.png"}
-                    alt={`Cover Image for Quickpose Research Paper`}
-                    // className={cn('shadow-sm w-full', {
-                    //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
-                    // })}
-                    className="rounded-2xl"
-                    width={1300}
-                    height={630}
-                  />
-                </div>
-              </div>
-              <div className="font-LibreFranklin">
+            <div className="flex flex-col overflow-visible md:flex-row md: gap-x-10 gap-y-4 mt-10 mb-10 mx-5 min-h-fit ">
+              <div className="flex-initial order-1 md:order-2 font-LibreFranklin min-w-[45%]">
                 <h1 className="text-3xl text-bold mb-3 leading-snug">
                   {" "}
                   Understanding Version Control as Material Interaction with{" "}
@@ -147,6 +121,43 @@ export default function Index() {
                   measures, and designs for version control systems.
                 </article>
                 <div></div>
+              </div>
+              <div className="order-1 md:order-1 mr-5 min-w-[45%]">
+                <div className="mb-5 w-[100%] min-h-[60] aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/v3yaseA7X2E"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="mb-5 max-w-[100%]">
+                  <Image
+                    src={"/assets/quickpose/quickposetop.jpg"}
+                    alt={`Cover Image for Quickpose Research Paper`}
+                    // className={cn('shadow-sm w-full', {
+                    //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
+                    // })}
+                    className="rounded-2xl"
+                    width={1300}
+                    height={630}
+                  />
+                </div>
+                <div className="mb-5 max-w-[100%]">
+                  <Image
+                    src={"/assets/quickpose/dirgraph.png"}
+                    alt={`Cover Image for Quickpose Research Paper`}
+                    // className={cn('shadow-sm w-full', {
+                    //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
+                    // })}
+                    className="rounded-2xl"
+                    width={1300}
+                    height={630}
+                  />
+                </div>
               </div>
             </div>
           </section>
