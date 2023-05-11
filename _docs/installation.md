@@ -4,7 +4,7 @@ title: 'installation'
 
 To Install Manually:
 
-1. [Download The Latest Version Here](https://ericrawn.media.quickpose)
+1. [Download The Latest Version Here](https://ericrawn.media/quickpose)
 2. Unzip inside your sketchbook folder **/Processing/tools/** folder.  If you don't have a **/tools/** directory yet, you'll have to make one. 
 
 Quickpose hasn't been added to the Processing Tool manager yet!
