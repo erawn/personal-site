@@ -18,7 +18,7 @@ const Header = () => {
             </li>
             <li className="mr-6">
               <a className=" hover:text-gray-500" href="/work">
-                Work
+                Creative Work
               </a>
             </li>
             <li className="mr-6">
