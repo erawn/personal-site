@@ -7,8 +7,7 @@ secondImage: '/assets/quickpose/dirgraph.png'
 date: '2023-03-16T05:35:07.322Z'
 type: 'publication'
 author:
-  name: 'Eric Rawn, Jingyi Li, Eric Paulos, and Sarah Chasins - **CHI ’23 Paper**'
-  picture: '/assets/blog/authors/jj.jpeg'
+  name: '**Eric Rawn**, Jingyi Li, Eric Paulos, and Sarah Chasins - **CHI ’23 Paper**'
 ogImage:
   url: '/assets/quickpose/unblur.jpg'
 ---

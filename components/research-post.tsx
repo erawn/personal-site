@@ -25,50 +25,60 @@ const ResearchPost = ({
   content,
 }: Props) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 mt-5 mb-0 ">
-      <div className="mr-5 min-w-fit">
-        <div className="mb-5">
-          <Image
-            src={coverImage}
-            alt={`Cover Image for ${title}`}
-            // className={cn('shadow-sm w-full', {
-            //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
-            // })}
-            width={1300}
-            height={630}
-          />
+    <div>
+      <div className="grid grid-cols-2 justify-center justify-items-center sm:grid-cols-2 md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 mt-5 mb-0 ">
+        <div className="mr-5 max-w-sm">
+          <div className="mb-5">
+            <Image
+              src={coverImage}
+              alt={`Cover Image for ${title}`}
+              // className={cn('shadow-sm w-full', {
+              //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
+              // })}
+              width={1300}
+              height={630}
+            />
+          </div>
+          {secondImage !== "" && (
+            <div className="max-lg:hidden">
+              <Image
+                src={secondImage}
+                alt={`Cover Image for ${title}`}
+                // className={cn('shadow-sm w-full', {
+                //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
+                // })}
+                width={1300}
+                height={630}
+              />
+            </div>
+          )}
         </div>
         <div>
-          <Image
-            src={secondImage}
-            alt={`Cover Image for ${title}`}
-            // className={cn('shadow-sm w-full', {
-            //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
-            // })}
-            width={1300}
-            height={630}
-          />
+          <h1 className="text-3xl text-bold mb-3 leading-snug">{title}</h1>
+          <h3 className="text-2xl font-thin mb-3 leading-snug">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className={markdownStyles["markdown"]}
+              children={author.name}
+            />
+          </h3>
+          <article className="mb-4 prose leading- max-lg:hidden">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className={markdownStyles["markdown"]}
+              children={content}
+            />
+          </article>
+          {/* <p className="text-lg leading-relaxed mb-4">{excerpt}</p> */}
         </div>
       </div>
-      <div>
-        <h1 className="text-3xl text-bold mb-3 leading-snug">{title}</h1>
-        <h3 className="text-2xl font-thin mb-3 leading-snug">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            className={markdownStyles["markdown"]}
-            children={author.name}
-          />
-        </h3>
-        <article className="mb-4 prose leading- ">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            className={markdownStyles["markdown"]}
-            children={content}
-          />
-        </article>
-
-        {/* <p className="text-lg leading-relaxed mb-4">{excerpt}</p> */}
-      </div>
+      <article className="mb-4 prose leading- lg:hidden">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          className={markdownStyles["markdown"]}
+          children={content}
+        />
+      </article>
     </div>
   );
 };

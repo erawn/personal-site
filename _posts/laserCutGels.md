@@ -6,7 +6,7 @@ secondImage: '/assets/blog/publications/laserCutGels/DSC_3910small.png'
 date: '2020-03-16T05:35:07.322Z'
 type: 'publication'
 author:
-  name: Eric Rawn and Jingyi Li - **CHI ‘20 Late Breaking Work**
+  name: '**Eric Rawn** and Jingyi Li - **CHI ‘20 Late Breaking Work**'
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/publications/laserCutGels/DSC_3924.png'

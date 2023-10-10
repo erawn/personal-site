@@ -6,7 +6,7 @@ secondImage: '/assets/blog/publications/velcro/image-asset.png'
 date: '2019-03-16T05:35:07.322Z'
 type: 'publication'
 author:
-  name: Eric Rawn and Tzu-Sheng Kuo - **UIST ’21 Poster**
+  name: '**Eric Rawn** and Tzu-Sheng Kuo - **UIST ’21 Poster**'
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/publications/velcro/image-asset.jpeg'
