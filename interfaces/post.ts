@@ -8,6 +8,9 @@ type PostType = {
   secondImage: string
   author: Author
   excerpt: string
+  conference: string
+  pdfLink: string
+  pubLink: string
   prettyDate: string
   ogImage: {
     url: string

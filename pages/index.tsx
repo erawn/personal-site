@@ -46,6 +46,9 @@ export const getStaticProps = async () => {
     "coverImage",
     "secondImage",
     "excerpt",
+    "pdfLink",
+    "pubLink",
+    "conference",
     "type",
     "content",
   ]);

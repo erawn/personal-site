@@ -1,15 +1,18 @@
 ---
 title: 'Understanding Version Control as Material Interaction with
 Quickpose'
-excerpt: ''
+excerpt: 'Working with materials involves iteration, reflection, and tacit knowledge building. For creative coders, we argue that version control systems are one way to support thinking about code like a material and built Quickpose to see how. We ran a month-long study with Processing artists, using their versions to chart their creative process.'
+conference: 'CHI ''23'
 coverImage: '/assets/quickpose/quickposetop.jpg'
 secondImage: '/assets/quickpose/dirgraph.png'
 date: '2023-03-16T05:35:07.322Z'
 type: 'publication'
 author:
-  name: '**Eric Rawn**, Jingyi Li, Eric Paulos, and Sarah Chasins - **CHI ’23 Paper**'
+  name: '**Eric Rawn**, Jingyi Li, Eric Paulos, and Sarah Chasins'
 ogImage:
   url: '/assets/quickpose/unblur.jpg'
+pdfLink: '/assets/blog/publications/quickpose/Quickpose_CHI23_Rawn.pdf'
+pubLink: 'https://doi.org/10.1145/3544548.3581394'
 ---
 
 Whether a programmer with code or a potter with clay, practitioners

@@ -10,8 +10,10 @@ type Props = {
 
 const Publications = ({ posts }: Props) => {
   return (
-    <section>
-      <div className="grid grid-cols-1 md:gap-x-6 lg:gap-x-16 gap-y-8 md:gap-y-8 mb-16">
+    <section className=''>
+      {/* <div className="grid grid-cols-1 md:gap-x-2 lg:gap-x-10 gap-y-1 md:gap-y-1 mb-16"> */}
+       <div className='flex'> 
+        <div className=''>
         {posts.map((post) => (
           <ResearchPost
               key={post.slug}
@@ -22,9 +24,13 @@ const Publications = ({ posts }: Props) => {
               author={post.author}
               slug={post.slug}
               excerpt={post.excerpt}
+              conference={post.conference}
+              pdfLink={post.pdfLink}
+              pubLink={post.pubLink}
               content={post.content}
             />
         ))}
+        </div>
       </div>
     </section>
   )

@@ -571,6 +571,11 @@
     "@octokit/webhooks-types" "6.10.0"
     aggregate-error "^3.1.0"
 
+"@pyncz/tailwind-mask-image@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@pyncz/tailwind-mask-image/-/tailwind-mask-image-2.0.0.tgz#59165001b8194caf8f2c6dfcb18248725c886720"
+  integrity sha512-BN52RPSp56VIA25ZpLD3SEigwADTrQ6a3Kq8x94rbhU6YP1HpvRjSYtnFenEfGw2nzESvFsNdYT6KKP+JuS73w==
+
 "@radix-ui/number@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/number/-/number-1.0.0.tgz#4c536161d0de750b3f5d55860fc3de46264f897b"

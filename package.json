@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.4.0",
+    "@pyncz/tailwind-mask-image": "^2.0.0",
     "@radix-ui/react-dropdown-menu": "^2.0.1",
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-scroll-area": "^1.0.2",

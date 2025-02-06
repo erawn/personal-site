@@ -11,9 +11,12 @@ const Layout = ({ preview, subpage = "", children }: Props) => {
     <>
       <Meta subpage={subpage} />
       <div className="min-h-screen">
-        {/* <Alert preview={preview} /> */}
-        <main>{children}</main>
+        <div className="max-w-4xl">
+          {/* <Alert preview={preview} /> */}
+          <main>{children}</main>
+        </div>
       </div>
+    
       <Footer />
     </>
   );

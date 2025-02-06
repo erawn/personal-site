@@ -1,14 +1,17 @@
 ---
 title: 'Beyond the Artifact: Power as a Lens for Creativity Support Tools'
-excerpt: ''
+excerpt: 'When we see a creativity support tool (CST), we should see a power relationship. From interviews with 11 creative practitioners and tool designers, we build a preliminary theory of how power relationships can manifest in CSTs, and what we could do about it.'
 coverImage: '/assets/blog/publications/beyondtheartifact/fig1.png'
 secondImage: ''
+conference: 'UIST ''23'
 date: '2023-10-31T05:35:07.322Z'
 type: 'publication'
 author:
-  name: 'Jingyi Li, **Eric Rawn**, Jacob Ritchie, Jasper Tran O`Leary, and Sean Follmer - **UIST ’23 Paper**'
+  name: 'Jingyi Li, **Eric Rawn**, Jacob Ritchie, Jasper Tran O`Leary, and Sean Follmer'
 ogImage:
   url: '/assets/quickpose/unblur.jpg'
+pdfLink: '/assets/blog/publications/beyondtheartifact/BeyondTheArtifact_UIST23.pdf'
+pubLink: 'https://doi.org/10.1145/3586183.3606831'
 ---
 
 Researchers who build creativity support tools (CSTs) define abstractions
