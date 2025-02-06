@@ -60,7 +60,7 @@ const Intro = () => {
 
             <p>
               <a
-                href="https://scholar.google.com/citations?user=GupuwssAAAAJ&hl=en&oi=ao"
+                href="https://github.com/erawn"
                 className="underline hover:text-blue-600 duration-200 transition-colors"
               >
                 <span className="">
