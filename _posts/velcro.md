@@ -7,7 +7,7 @@ date: '2019-03-16T05:35:07.322Z'
 type: 'publication'
 conference: 'UIST ''21 Poster'
 author:
-  name: '**Eric Rawn** and Tzu-Sheng Kuo - **UIST ’21 Poster**'
+  name: '**Eric Rawn** and Tzu-Sheng Kuo'
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/publications/velcro/image-asset.jpeg'

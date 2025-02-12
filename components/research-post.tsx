@@ -30,6 +30,7 @@ const ResearchPost = ({
   slug,
   content,
 }: Props) => {
+  console.log(JSON.stringify(author.name))
   return (
     <div className="mb-5">
       {/* md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 */}
@@ -75,9 +76,13 @@ const ResearchPost = ({
           <h3 className="text-md font-thin mb-3 leading-snug italic">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              className="text-sm"
+              className="text-sm whitespace-nowrap inline"
               children={author.name}
-            />
+              components={{ p: "a" }}
+            />&ensp;
+            <a className="text-sm font-light italic text-portfolio text-accent-1">
+              {conference}
+            </a>
           </h3>
           <h4 className="text-sm font-light mb-3 leading-snug max-w-lg">{excerpt}
 
@@ -99,10 +104,7 @@ const ResearchPost = ({
                 Link
 
               </a>
-              &ensp;
-            <a className="text-sm font-light italic text-portfolio text-accent-1">
-              {conference}
-            </a>
+       
             </p>
           </div>
           

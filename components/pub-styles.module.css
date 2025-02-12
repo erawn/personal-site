@@ -1,33 +1,33 @@
-.markdown {
+/* .markdown {
   @apply text-lg leading-relaxed;
-}
+} */
 
-.markdown img {
+/* .markdown img {
   @apply my-5
 }
 
 .markdown p {
   @apply my-2 leading-snug
-}
+} */
 
-.markdown ul,
+/* .markdown ul,
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
-}
+} */
 
-.markdown h2 {
+/* .markdown h2 {
   @apply text-4xl mt-12 mb-4 leading-snug;
-}
+} */
 
-.markdown h3 {
+/* .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
-}
-.markdown h4 {
+} */
+/* .markdown h4 {
   @apply text-sm
 }
 
 .markdown h5 {
   @apply text-red-500
-}
+} */
 
