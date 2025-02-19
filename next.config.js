@@ -26,5 +26,6 @@ module.exports = {
 
   images: {
     formats: ["image/avif", "image/webp"],
+    minimumCacheTTL:2592000
   },
 };
