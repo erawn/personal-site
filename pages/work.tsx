@@ -39,8 +39,13 @@ export default function Index({ allPosts }: Props) {
             />
           )} */}
           {workPosts.length > 0 && <MoreStories posts={workPosts} />}
+          <p className="text-slate-200">
+          wealth of tuner arrangements (7)
+          </p>
         </Container>
+      
       </Layout>
+   
     </>
   );
 }
