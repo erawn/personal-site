@@ -5,12 +5,12 @@ coverImage: '/assets/blog/publications/SystemOverview_cameraready.png'
 secondImage: '/assets/blog/publications/SystemOverview_cameraready.png'
 date: '2025-03-16T05:35:07.322Z'
 type: 'publication'
-conference: 'CHI ''25'
+conference: 'CHI ''25 **Best Paper Honorable Mention**'
 author:
   name: '**Eric Rawn** and Sarah Chasins'
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/publications/SystemOverview_cameraready.png'
 pdfLink: '/assets/blog/publications/Rawn_Pagebreaks.pdf'
-pubLink: ''
+pubLink: 'https://dl.acm.org/doi/10.1145/3706598.3713620'
 ---

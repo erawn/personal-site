@@ -30,12 +30,12 @@ const ResearchPost = ({
   slug,
   content,
 }: Props) => {
-  console.log(JSON.stringify(author.name))
+  // console.log(JSON.stringify(author.name))
   return (
     <div className="mb-5">
       {/* md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 */}
       {/* <div className="justify-stretch grid grid-cols-3 place-content-center justify-center justify-items-center max-w-xl1  mt-5 mb-0 "> */}
-       <div className="flex">
+      <div className="flex">
         {/* <div className="w-16 flex-none justify-self-center place-self-center">
         {excerpt}
         </div> */}
@@ -68,27 +68,34 @@ const ResearchPost = ({
         <div className="grow items-left md:justify-between pl-5">
           <h1 className="text-lg text-bold mb-0 leading-snug">
             <span className="">
-            {title}
+              {title}
             </span>
-        
+
           </h1>
 
-          <h3 className="text-md font-thin mb-3 leading-snug italic">
+          <h3 className="text-md font-thin mb-0 leading-snug italic">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               className="text-sm whitespace-nowrap inline"
               children={author.name}
               components={{ p: "a" }}
-            />&ensp;
-            <a className="text-sm font-light italic text-portfolio text-accent-1">
-              {conference}
-            </a>
+            />
           </h3>
+          <h3 className="text-sm font-normal italic text-portfolio text-accent-1">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className="text-sm whitespace-nowrap inline"
+              children={conference}
+              components={{ p: "a" }}
+            />&ensp;
+            {/* {conference} */}
+          </h3>
+
           <h4 className="text-sm font-light mb-3 leading-snug max-w-lg">{excerpt}
 
           </h4>
           <div className="text-sm">
-          <p>
+            <p>
               <a
                 href={pdfLink}
                 className="underline hover:text-blue-600 duration-200 transition-colors"
@@ -104,10 +111,10 @@ const ResearchPost = ({
                 Link
 
               </a>
-       
+
             </p>
           </div>
-          
+
           {/* <article className="mb-10 prose max-lg:hidden">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}

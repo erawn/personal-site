@@ -12,10 +12,13 @@ const Publications = ({ posts }: Props) => {
   return (
     <section className=''>
       {/* <div className="grid grid-cols-1 md:gap-x-2 lg:gap-x-10 gap-y-1 md:gap-y-1 mb-16"> */}
-       <div className='flex'> 
+      <div className='flex'>
         <div className=''>
-        {posts.map((post) => (
-          <ResearchPost
+          <h3 className="text-sm font-thin mb-2 leading-snug italic mr-5 justify-self-end">
+            * denotes equal contribution
+          </h3>
+          {posts.map((post) => (
+            <ResearchPost
               key={post.slug}
               title={post.title}
               coverImage={post.coverImage}
@@ -29,7 +32,9 @@ const Publications = ({ posts }: Props) => {
               pubLink={post.pubLink}
               content={post.content}
             />
-        ))}
+          ))}
+
+
         </div>
       </div>
     </section>
