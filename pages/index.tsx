@@ -25,7 +25,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>Eric Rawn Portfolio</title>
+          <title>Eric Rawn</title>
         </Head>
         <Header />
         <Intro />

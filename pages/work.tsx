@@ -22,17 +22,17 @@ export default function Index({ allPosts }: Props) {
   });
 
   return (
-        <div className ="min-h-screen flex justify-center bg-slate-500">
-        <div className="max-w-3xl min-w-full bg-slate-200 ">
+    <div className="min-h-screen flex justify-center bg-slate-500">
+      <div className="max-w-3xl min-w-full bg-slate-200 ">
         <Head>
-          <title>Eric Rawn Portfolio</title>
+          <title>Eric Rawn</title>
         </Head>
-     
+
         <Header />
 
         <Container>
-        <div className="flex flex-col">
-          {/* {heroPost && (
+          <div className="flex flex-col">
+            {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -42,16 +42,16 @@ export default function Index({ allPosts }: Props) {
               excerpt={heroPost.excerpt}
             />
           )} */}
-          {workPosts.length > 0 && <MoreStories posts={workPosts} />}
-          <p className="text-slate-200">
-          wealth of tuner arrangements (7)
-          </p>
+            {workPosts.length > 0 && <MoreStories posts={workPosts} />}
+            <p className="text-slate-200">
+              wealth of tuner arrangements (7)
+            </p>
           </div>
           <Footer />
         </Container>
-        </div>
       </div>
-   
+    </div>
+
   );
 }
 

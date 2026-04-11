@@ -78,6 +78,17 @@ const Intro = () => {
 
               </a>
             </p>
+            <br></br>
+
+            <p>
+              <a
+                href="https://docs.google.com/document/d/1TE5SIkxN0jk3k--_bspn6G3JfhOCn1eHRXbh5Ss_bPE/edit?usp=sharing"
+                className="underline hover:text-blue-600 duration-200 transition-colors"
+              >
+                What I Wish I Read My First Year of Grad School
+              </a>
+            </p>
+
 
 
 
