@@ -82,17 +82,23 @@ const ResearchPost = ({
             />
           </h3>
           <h3 className="text-sm font-normal italic text-portfolio text-accent-1">
-            <ReactMarkdown
+            {/* <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               className="text-sm whitespace-nowrap inline"
               children={conference}
               components={{ p: "a" }}
-            />&ensp;
-            {/* {conference} */}
+            /> */}
+            {conference}
           </h3>
 
-          <h4 className="text-sm font-light mb-3 leading-snug max-w-lg">{excerpt}
-
+          <h4 className="text-sm font-light leading-snug max-w-lg">
+            {/* {excerpt} */}
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className="text-sm font-light leading-snug max-w-lg"
+              children={excerpt}
+              components={{ p: "a" }}
+            />&ensp;
           </h4>
           <div className="text-sm">
             <p>
