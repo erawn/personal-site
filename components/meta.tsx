@@ -10,11 +10,11 @@ const Meta = ({ subpage = "" }: defaultProps) => {
       case "":
         return (
           <>
-            <meta name="description" content={`Eric Rawn's Portfolio Site`} />
+            <meta name="description" content={`Eric Rawn`} />
             <meta property="og:image" content={HOME_OG_IMAGE_URL} />
             <meta
               property="og:title"
-              content="Eric Rawn's Portfolio Site"
+              content="Eric Rawn"
             ></meta>
           </>
         );
