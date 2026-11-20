@@ -5,8 +5,8 @@ import headshot from "../public/assets/headshot.jpeg"
 // import googlescholar from "../public/assets/icons/googlescholar.svg"
 const Intro = () => {
   return (
-    <div className="max-w-4xl mb-10">
-      <section className="flex gap-y-8 mt-4 mb-12 ml-4">
+    <div className="max-w-5xl mb-5">
+      <section className="flex gap-y-2 mt-[35px] mb-0 justify-items-center justify-center">
         <div className="flex-none max-w-sm">
           <Image
             src={headshot}
@@ -19,34 +19,48 @@ const Intro = () => {
         </div>
         <div>
         </div>
-        <div className="grow pl-5 self-center">
+        <div className="pl-5">
           <h1 className="text-left text-4xl font-bold tracking-tighter leading-tight">
-            Hi! I'm Eric.
+            Eric Rawn
           </h1>
           <h4 className="text-left text-sm mt-1">
-            PhD Student at UC Berkeley in Computer Science, advised by <a
+            CS PhD Student at UC Berkeley (advised by <a
               href="https://schasins.com/"
               className="underline hover:text-blue-600 duration-200 transition-colors"
             >
               Sarah Chasins
-            </a>.
+            </a>)
+          </h4>
+          <h4 className="text-left font-bold text-sm mt-1">
+            Human-Computer Interaction ◦ Programming Languages
           </h4>
 
           <h4 className="text-left text-sm mt-1 ">
-            <p>        <a
-              href="erawn at berkeley dot edu"
+            <p><a
+              href="erawn@berkeley.edu"
               className="underline hover:text-blue-600 duration-200 transition-colors"
             >
               <span className="">
                 <Image className="w-3 whitespace-nowrap inline" unoptimized width={12} height={12} src={"/assets/icons/email.svg"} alt={"An Email Icon"}></Image>
 
               </span>
-              erawn at berkeley dot edu
+              erawn@berkeley.edu
 
-            </a> </p>
+            </a>
+              &ensp;
+              <a
+                href="https://github.com/erawn"
+                className="underline hover:text-blue-600 duration-200 transition-colors"
+              >
+                <span className="">
+                  <Image className="w-3 whitespace-nowrap inline" unoptimized width={12} height={12} src={"/assets/icons/github.svg"} alt={"A Github Icon"}></Image>
 
 
-            <p>
+                </span>
+                Github
+
+              </a>
+              &ensp;
               <a
                 href="https://scholar.google.com/citations?user=GupuwssAAAAJ&hl=en&oi=ao"
                 className="underline hover:text-blue-600 duration-200 transition-colors"
@@ -63,22 +77,6 @@ const Intro = () => {
 
               </a>
             </p>
-
-            <p>
-              <a
-                href="https://github.com/erawn"
-                className="underline hover:text-blue-600 duration-200 transition-colors"
-              >
-                <span className="">
-                  <Image className="w-3 whitespace-nowrap inline" unoptimized width={12} height={12} src={"/assets/icons/github.svg"} alt={"A Github Icon"}></Image>
-
-
-                </span>
-                Github
-
-              </a>
-            </p>
-            <br></br>
 
             <p>
               <a
@@ -100,13 +98,23 @@ const Intro = () => {
 
       </section>
 
+
       <section className="items-left md:justify-between pl-8 mt-4 pr-8">
 
-        <h4 className="text-left md:text-left text-md mt-5 md:pl-8 font-extralight">
-          I study <b className="italic text-accent-1">programming practice:</b> how people use programs to learn about the world and think through their work. Using long-term qualitative methods, like participant observation, codesign, and in-situ deployments, I develop programming language interventions and programming systems for scientists, data analysts, and artists.
+        <h4 className="text-left text-md mt-0 md:pl-8 font-extralight 	
+overflow-hidden whitespace-nowrap">
+          ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </h4>
+        <h4 className="text-left md:text-left text-md mt-1 md:pl-8 font-extralight">
+
+          I study <b className="italic text-accent-1">programming practice:</b> how people use programs to learn about the world and think through their work. Using long-term qualitative methods, participant observation, and in-situ deployments, I develop programming language interventions and programming systems for scientists, data analysts, and artists.
 
           <br /><br />
           I also have interests in the intellectual history of HCI, the politics of computing, and philosophical discussions around action and practical reason.
+        </h4>
+        <h4 className="text-left md:text-left text-md mt-0 md:pl-8 font-extralight 	
+overflow-hidden whitespace-nowrap">
+          ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         </h4>
       </section>
     </div>

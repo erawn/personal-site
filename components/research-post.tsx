@@ -39,18 +39,16 @@ const ResearchPost = ({
         {/* <div className="w-16 flex-none justify-self-center place-self-center">
         {excerpt}
         </div> */}
-        <div className="hidden sm:block sm:ml-10 show mr-0 ml-0 flex-none">
-          <div className="mb-0">
-            <Image
-              src={coverImage}
-              alt={`Cover Image for ${title}`}
-              // className={cn('shadow-sm w-full', {
-              //   'hover:shadow-lg hover:cursor-pointer transition-shadow duration-200': post.slug,
-              // })}
-              width={200}
-              height={230}
-            />
-          </div>
+        <div className="flex justify-items-center items-center justify-center relative ml-5 flex-none w-[300px]">
+          <Image
+            src={coverImage}
+            alt={`Cover Image for ${title}`}
+            // className="max-h-[100px] width:auto height:auto"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="h-fit w-fit object-scale-down max-h-[300px]"
+          />
           {/* {secondImage !== "" && (
             <div className="max-lg:hidden">
               <Image
@@ -67,35 +65,41 @@ const ResearchPost = ({
         </div>
         <div className="grow items-left md:justify-between pl-5">
           <h1 className="text-lg text-bold mb-0 leading-snug">
-            <span className="">
+            <div className="text-md font-normal text-portfolio inline-block">
               {title}
-            </span>
+              &ensp;
+              <div className="text-accent-1 italic">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  // className="text-sm whitespace-nowrap inline"
+                  children={conference}
+                  components={{ p: "a" }}
+                />
+              </div>
+            </div>
+
+            {/* <span className="">
+              {title}
+            </span> */}
+
 
           </h1>
 
           <h3 className="text-md font-thin mb-0 leading-snug italic">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              className="text-sm whitespace-nowrap inline"
+              // className="text-sm whitespace-nowrap inline"
               children={author.name}
               components={{ p: "a" }}
             />
           </h3>
-          <h3 className="text-sm font-normal italic text-portfolio text-accent-1">
-            {/* <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className="text-sm whitespace-nowrap inline"
-              children={conference}
-              components={{ p: "a" }}
-            /> */}
-            {conference}
-          </h3>
 
-          <h4 className="text-sm font-light leading-snug max-w-lg">
+
+          <h4 className="text-sm font-light leading-snug max-w-2xl">
             {/* {excerpt} */}
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              className="text-sm font-light leading-snug max-w-lg"
+              // className="text-sm font-light leading-snug max-w-lg"
               children={excerpt}
               components={{ p: "a" }}
             />&ensp;

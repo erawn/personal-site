@@ -1,4 +1,5 @@
 module.exports = {
+  turbopack: {},
   webpack: (config) => {
     // load worker files as a urls by using Asset Modules
     // https://webpack.js.org/guides/asset-modules/
@@ -26,6 +27,6 @@ module.exports = {
 
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL:2592000
+    minimumCacheTTL: 2592000,
   },
 };

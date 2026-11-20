@@ -5,7 +5,7 @@ coverImage: "/assets/blog/publications/ubicompimage.png"
 secondImage: '/assets/blog/publications/ubicompimage.png'
 date: '2024-03-16T05:35:07.322Z'
 type: 'publication'
-conference: 'IEEE Annals of the History of Computing ''24'
+conference: 'IEEE Annals of the History of Computing ''24 **Best Paper Honorable Mention**'
 author:
   name: '**Eric Rawn**'
   picture: '/assets/blog/authors/jj.jpeg'

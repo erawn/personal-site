@@ -4,21 +4,17 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import Header from "../components/header";
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
-import { setPDFWorker } from "../lib/api";
-import path from "path";
-import fs from "fs";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { RESUME_PATH } from "../lib/constants";
 
-export default function Index({ allPosts }) {
+export default function Index({ }) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   //https://codesandbox.io/s/react-pdf-next-js-forked-x12d2?file=/package.json
-  const PDFViewer = dynamic(() => import("../components/pdf-viewer"), {
-    ssr: false,
-  });
+  // const PDFViewer = dynamic(() => import("../components/pdf-viewer"), {
+  //   ssr: false,
+  // });
 
   return (
     <>
@@ -36,7 +32,7 @@ export default function Index({ allPosts }) {
               (Download PDF)
             </Link>
             <div>
-              <PDFViewer pdfPath={RESUME_PATH} />
+              {/* <PDFViewer pdfPath={RESUME_PATH} /> */}
             </div>
           </div>
         </Container>

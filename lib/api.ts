@@ -4,8 +4,8 @@ import matter from "gray-matter";
 import { pdfjs } from "react-pdf";
 const postDirectory = join(process.cwd(), "_posts");
 
-export function getPostSlugs(postDir) {
-  return fs.readdirSync(postDir);
+export function getPostSlugs(postDir: fs.PathLike) {
+  return fs.readdirSync(/*turbopackIgnore: true*/postDir);
 }
 export function getDocFiles() {
   const docsDir = join(process.cwd(), "_docs");
@@ -16,17 +16,17 @@ export function getDocFiles() {
 
   return entries;
 }
-export function setPDFWorker() {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-  const pdfjsDistPath = path.dirname(
-    require.resolve("pdfjs-dist/package.json")
-  );
-  const pdfWorkerPath = path.join(pdfjsDistPath, "build", "pdf.worker.js");
+// export function setPDFWorker() {
+//   pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+//   const pdfjsDistPath = path.dirname(
+//     require.resolve("pdfjs-dist/package.json")
+//   );
+//   const pdfWorkerPath = path.join(pdfjsDistPath, "build", "pdf.worker.js");
 
-  fs.copyFileSync(pdfWorkerPath, "./dist/pdf.worker.js");
-}
+//   fs.copyFileSync(pdfWorkerPath, "./dist/pdf.worker.js");
+// }
 
-export function getPostBySlug(slug: string, fields: string[] = [], directory) {
+export function getPostBySlug(slug: string, fields: string[] = [], directory: string) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(directory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -65,8 +65,8 @@ export function getAllPosts(fields: string[] = []) {
 }
 
 export function getAllImages(folder: string) {
-  const imgDirectory = join(process.cwd(), folder);
-  const images = fs.readdirSync(imgDirectory);
+  const imgDirectory = join(/*turbopackIgnore: true*/process.cwd(), folder);
+  const images = fs.readdirSync(/*turbopackIgnore: true*/imgDirectory);
   const imgs = images.filter((img) => {
     return (
       img.includes("jpg") ||

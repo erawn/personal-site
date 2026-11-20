@@ -1,0 +1,81 @@
+import Container from "../components/container";
+import { MoreStories } from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import Layout from "../components/layout";
+import { getAllPosts } from "../lib/api";
+import Head from "next/head";
+import { CMS_NAME } from "../lib/constants";
+import Post from "../interfaces/post";
+import Header from "../components/header";
+import { pageview } from "../util/gtag";
+import { useEffect } from "react";
+import Footer from "../components/footer";
+type Props = {
+  allPosts: Post[];
+};
+
+export default function Index({ allPosts }: Props) {
+  const blogPosts = allPosts.filter((post) => post.type === "blog");
+  useEffect(() => {
+    pageview(new URL("https://www.ericrawn.media/blog"));
+  });
+
+  return (
+    <Layout>
+      <Head>
+        <title>Eric Rawn</title>
+      </Head>
+      <Header />
+      {/* <Intro /> */}
+      <Container>
+        {blogPosts.length > 0 && <MoreStories posts={blogPosts} />}
+      </Container>
+    </Layout>
+
+    // <div className="min-h-screen flex justify-center bg-slate-500">
+    //   <div className="max-w-3xl min-w-full bg-slate-200 ">
+    //     <Head>
+    //       <title>Eric Rawn</title>
+    //     </Head>
+
+    //     <Header />
+
+    //     <Container>
+    //       <div className="flex flex-col">
+    //         {/* {heroPost && (
+    //         <HeroPost
+    //           title={heroPost.title}
+    //           coverImage={heroPost.coverImage}
+    //           date={heroPost.date}
+    //           author={heroPost.author}
+    //           slug={heroPost.slug}
+    //           excerpt={heroPost.excerpt}
+    //         />
+    //       )} */}
+    //         {blogPosts.length > 0 && <MoreStories posts={blogPosts} />}
+    //       </div>
+    //       <Footer />
+    //     </Container>
+    //   </div>
+    // </div>
+
+  );
+}
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "prettyDate",
+    "excerpt",
+    "type",
+  ]);
+
+  return {
+    props: { allPosts },
+  };
+};

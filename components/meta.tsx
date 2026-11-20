@@ -5,7 +5,7 @@ interface defaultProps {
 }
 
 const Meta = ({ subpage = "" }: defaultProps) => {
-  function renderTitle(subpage) {
+  function renderTitle(subpage: string) {
     switch (subpage) {
       case "":
         return (

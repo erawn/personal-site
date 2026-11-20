@@ -25,9 +25,9 @@ module.exports = {
         },
       }),
       colors: {
-        "accent-1": "#739EFA",
-        "side-bg": "#F8EAC7",
-        "center-bg":"#F8F2E4",
+        "accent-1": "#806FED",
+        "side-bg": "#dabf92",
+        "center-bg": "#fbfbfb",
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",

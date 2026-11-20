@@ -48,11 +48,14 @@ export default function Post({ post, morePosts, preview }: Props) {
                 prettyDate={post.prettyDate}
               />
               <div className="grid grid-cols-1 justify-items-center text-center">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  className={markdownStyles["markdown"]}
-                  children={post.content}
-                />
+                <div className={markdownStyles["markdown"]}>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    // className={markdownStyles["markdown"]}
+                    children={post.content}
+                  />
+                </div>
+
               </div>
             </article>
           </>

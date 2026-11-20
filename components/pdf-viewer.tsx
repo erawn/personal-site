@@ -1,51 +1,51 @@
 
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import workerSrc from "../pdf-worker";
+// import { SetStateAction, useState } from "react";
+// import { Document, Page, pdfjs } from "react-pdf";
+// import workerSrc from "../pdf-worker";
 
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+// pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
-type Props = {
-  pdfPath:string
-}
+// type Props = {
+//   pdfPath:string
+// }
 
-export default function PDFViewer({pdfPath}: Props) {
-  const [file, setFile] = useState(pdfPath);
-  const [numPages, setNumPages] = useState(null);
+// export default function PDFViewer({pdfPath}: Props) {
+//   const [file, setFile] = useState(pdfPath);
+//   const [numPages, setNumPages] = useState(null);
 
-  function onFileChange(event) {
-    setFile(event.target.files[0]);
-  }
+//   function onFileChange(event: { target: { files: SetStateAction<string>[]; }; }) {
+//     setFile(event.target.files[0]);
+//   }
 
-  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-    setNumPages(nextNumPages);
-  }
+//   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+//     setNumPages(nextNumPages);
+//   }
 
-  return (
-    <div className="">
-      {/* <div>
-        <label htmlFor="file">Load from file:</label>{" "}
-        <input onChange={onFileChange} type="file" />
-      </div> */}
-      <div className="ml-1">
-        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+//   return (
+//     <div className="">
+//       {/* <div>
+//         <label htmlFor="file">Load from file:</label>{" "}
+//         <input onChange={onFileChange} type="file" />
+//       </div> */}
+//       <div className="ml-1">
+//         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
          
-            {Array.from({ length: numPages }, (_, index) => (
-               <div className="w-full">
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                renderAnnotationLayer={false}
-                renderTextLayer={false}
-                scale={4}
+//             {Array.from({ length: numPages }, (_, index) => (
+//                <div className="w-full">
+//               <Page
+//                 key={`page_${index + 1}`}
+//                 pageNumber={index + 1}
+//                 renderAnnotationLayer={false}
+//                 renderTextLayer={false}
+//                 scale={4}
                 
-              />
-                 </div>
-            ))}
+//               />
+//                  </div>
+//             ))}
        
           
-        </Document>
-      </div>
-    </div>
-  );
-}
+//         </Document>
+//       </div>
+//     </div>
+//   );
+// }
