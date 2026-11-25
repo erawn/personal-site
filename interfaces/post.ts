@@ -9,6 +9,7 @@ type PostType = {
   author: Author
   excerpt: string
   conference: string
+  award?: string
   pdfLink: string
   pubLink: string
   prettyDate: string

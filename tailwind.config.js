@@ -28,6 +28,7 @@ module.exports = {
         "accent-1": "#806FED",
         "side-bg": "#dabf92",
         "center-bg": "#fbfbfb",
+        "accent-2": "#BA9507",
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",

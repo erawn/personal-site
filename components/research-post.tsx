@@ -10,6 +10,7 @@ type Props = {
   date: string;
   excerpt: string;
   conference: string;
+  award: string;
   pdfLink: string;
   pubLink: string;
   author: Author;
@@ -24,6 +25,7 @@ const ResearchPost = ({
   date,
   excerpt,
   conference,
+  award,
   pdfLink,
   pubLink,
   author,
@@ -32,14 +34,14 @@ const ResearchPost = ({
 }: Props) => {
   // console.log(JSON.stringify(author.name))
   return (
-    <div className="mb-5">
+    <div className="mb-5 pr-5">
       {/* md:gap-x-6 lg:gap-x-16 gap-y-4 md:gap-y-4 */}
       {/* <div className="justify-stretch grid grid-cols-3 place-content-center justify-center justify-items-center max-w-xl1  mt-5 mb-0 "> */}
       <div className="flex">
         {/* <div className="w-16 flex-none justify-self-center place-self-center">
         {excerpt}
         </div> */}
-        <div className="flex justify-items-center items-center justify-center relative ml-5 flex-none w-[300px]">
+        <div className="sm:block hidden flex justify-items-center items-center justify-center relative ml-5 flex-none w-[300px]">
           <Image
             src={coverImage}
             alt={`Cover Image for ${title}`}
@@ -49,6 +51,7 @@ const ResearchPost = ({
             sizes="100vw"
             className="h-fit w-fit object-scale-down max-h-[300px]"
           />
+
           {/* {secondImage !== "" && (
             <div className="max-lg:hidden">
               <Image
@@ -63,19 +66,20 @@ const ResearchPost = ({
             </div>
           )} */}
         </div>
+        <div className="sm:hidden min-w-24 max-w-24 text-accent-1 font-bold pl-5 mr-5 text-md italic">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            // className="text-sm whitespace-nowrap inline"
+            children={conference}
+            components={{ p: "a" }}
+          />
+        </div>
         <div className="grow items-left md:justify-between pl-5">
-          <h1 className="text-lg text-bold mb-0 leading-snug">
-            <div className="text-md font-normal text-portfolio inline-block">
+          <h1 className="sm:text-xl text-lg text-bold mb-0 leading-snug">
+            <div className="font-bold inline-block">
               {title}
               &ensp;
-              <div className="text-accent-1 italic">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  // className="text-sm whitespace-nowrap inline"
-                  children={conference}
-                  components={{ p: "a" }}
-                />
-              </div>
+
             </div>
 
             {/* <span className="">
@@ -84,8 +88,16 @@ const ResearchPost = ({
 
 
           </h1>
+          <div className="hidden sm:block text-accent-1 font-normal text-md italic">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              // className="text-sm whitespace-nowrap inline"
+              children={conference}
+              components={{ p: "a" }}
+            />
+          </div>
 
-          <h3 className="text-md font-thin mb-0 leading-snug italic">
+          <h3 className="text-md font-normal mb-0 leading-snug">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               // className="text-sm whitespace-nowrap inline"
@@ -94,8 +106,16 @@ const ResearchPost = ({
             />
           </h3>
 
+          <h3 className="text-md font-bold mb-0 text-accent-2 leading-snug">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              // className="text-sm whitespace-nowrap inline"
+              children={award}
+              components={{ p: "a" }}
+            />
+          </h3>
 
-          <h4 className="text-sm font-light leading-snug max-w-2xl">
+          <h4 className="hidden sm:block sm:text-sm text-xs font-light leading-snug max-w-2xl">
             {/* {excerpt} */}
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}

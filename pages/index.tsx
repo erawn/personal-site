@@ -47,6 +47,7 @@ export const getStaticProps = async () => {
     "pdfLink",
     "pubLink",
     "conference",
+    "award",
     "type",
     "content",
   ]);

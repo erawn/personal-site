@@ -28,6 +28,7 @@ const Publications = ({ posts }: Props) => {
               slug={post.slug}
               excerpt={post.excerpt}
               conference={post.conference}
+              award={post.award ?? ""}
               pdfLink={post.pdfLink}
               pubLink={post.pubLink}
               content={post.content}

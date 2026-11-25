@@ -1,13 +1,15 @@
 import Image from "next/image"
 import headshot from "../public/assets/headshot.jpeg"
+import { RESUME_PATH } from "../lib/constants"
+import Link from "next/link"
 // import github from "../public/assets/icons/github.svg"
 // import email from "../public/assets/icons/email.svg"
 // import googlescholar from "../public/assets/icons/googlescholar.svg"
 const Intro = () => {
   return (
-    <div className="max-w-5xl mb-5">
-      <section className="flex gap-y-2 mt-[35px] mb-0 justify-items-center justify-center">
-        <div className="flex-none max-w-sm">
+    <div className="mb-0 max-w-full">
+      <section className="sm:flex grid grid-cols-1 mt-[35px] mb-0 justify-center justify-items-center align-content-center align-items-center">
+        <div className="grow-0">
           <Image
             src={headshot}
             alt={`Cover Image for cover image`}
@@ -17,9 +19,7 @@ const Intro = () => {
             priority
           />
         </div>
-        <div>
-        </div>
-        <div className="pl-5">
+        <div className="pl-5 grow-0">
           <h1 className="text-left text-4xl font-bold tracking-tighter leading-tight">
             Eric Rawn
           </h1>
@@ -76,6 +76,17 @@ const Intro = () => {
                 Google Scholar
 
               </a>
+              &ensp;
+              <a
+                href={RESUME_PATH}
+                className="underline hover:text-blue-600 duration-200 transition-colors"
+              >
+                <span className="">
+                  <Image className="w-3 whitespace-nowrap inline" unoptimized width={12} height={12} src={"/assets/icons/form.svg"} alt={"A CV Icon"}></Image>
+                </span>
+                CV
+              </a>
+
             </p>
 
             <p>
@@ -94,24 +105,25 @@ const Intro = () => {
 
         </div>
 
-
-
       </section>
 
 
-      <section className="items-left md:justify-between pl-8 mt-4 pr-8">
+      <section className="pl-8 mt-0 pr-8">
 
         <h4 className="text-left text-md mt-0 md:pl-8 font-extralight 	
 overflow-hidden whitespace-nowrap">
           ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         </h4>
-        <h4 className="text-left md:text-left text-md mt-1 md:pl-8 font-extralight">
+        <div className="flex">
+          <h4 className="text-left text-md mt-1 md:pl-8 font-extralight">
 
-          I study <b className="italic text-accent-1">programming practice:</b> how people use programs to learn about the world and think through their work. Using long-term qualitative methods, participant observation, and in-situ deployments, I develop programming language interventions and programming systems for scientists, data analysts, and artists.
+            I study <b className="italic text-accent-1">programming practice:</b> how people use programs to learn about the world and think through their work. Using long-term qualitative methods, participant observation, and in-situ deployments, I develop programming language interventions and programming systems for scientists, data analysts, and artists.
 
-          <br /><br />
-          I also have interests in the intellectual history of HCI, the politics of computing, and philosophical discussions around action and practical reason.
-        </h4>
+            <br /><br />
+            I also have interests in the intellectual history of HCI, the politics of computing, and philosophical discussions around action and practical reason.
+          </h4>
+        </div>
+
         <h4 className="text-left md:text-left text-md mt-0 md:pl-8 font-extralight 	
 overflow-hidden whitespace-nowrap">
           ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

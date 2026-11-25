@@ -1,6 +1,6 @@
 ---
 title: 'Programming By Scaffolded Demonstration with Perpend'
-excerpt: 'Output-directed programming systems often help users who know what they want but not how to write a program. For many users however, writing a program is how they discover what they want their program to do. We take Tim Ingold`s idea of a material to argue that one way we can help these kinds of users is by helping them understand their possible next steps. We call this Programming by Scaffolded Demonstration and built a system for p5.js, called Perpend, to test it out.'
+excerpt: 'Output-directed programming systems often help users who know what they want but not how to write a program. For many users however, writing a program is how they discover what they want their program to do. We take Tim Ingold`s idea of a material to argue that one way we can help these kinds of users is by helping them understand the changes to their program that the programming language makes possible. We call this Programming by Scaffolded Demonstration and built a system for p5.js, called Perpend, to test it out with expert programmers.'
 coverImage: '/assets/blog/publications/perpend_teaser_vertical.png'
 secondImage: '/assets/blog/publications/perpend_teaser_vertical.png'
 date: '2026-03-16T05:35:07.322Z'
